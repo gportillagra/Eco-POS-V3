@@ -16,11 +16,11 @@ class Home extends AppObject
         {
             //Create the layout.
             this.lay = ui.addLayout( this.main.layPage, "linear",  "fillxy" )
-            this.lay.setChildMargins( .02, .02, .02, .02 )     
+            this.lay.setChildMargins( 0.02, 0.02, 0.02, 0.02 )     
         		
         		//Crear Layout para botones ingresos/gastos
         		this.layBotones = ui.addLayout(this.lay, "linear", "horizontal, left, fillx")
-        		this.layBotones.setChildMargins( 0.02, 0.230, 0.02, 0.02 ) 
+        		this.layBotones.setChildMargins( 0.02, 0.16, 0.02, 0.02 ) 
         		
        		 //Crear boton ingresos
        		 this.nuevoIngreso = ui.addButton(this.layBotones, "Ingresos", "outline, large", 0.5)
@@ -35,17 +35,17 @@ class Home extends AppObject
         		this.nuevoGasto.textColor = "#ffffff"
         
         		//Crear borton de nueva venta
-        		this.nuevaVenta = ui.addButton(this.layMain, "Nueva venta", "outline, large", 0.96)
+        		this.nuevaVenta = ui.addButton(this.lay, "Nueva venta", "outline, large", 0.96)
         		this.nuevaVenta.icon = "shopping_cart"
         		this.nuevaVenta.backColor = "#4caf50" 
         		this.nuevaVenta.textColor = "#ffffff"
         
         		//Mostrsr pedidos pendienres
-        		/*var pedidos = [
+        		var pedidos = [
         			["event", "Misc Hernandez (La Estanzuela)", "Fecha de entrega: 15/01/2023"]
         		]
-        		this.listPedidos = ui.addList(this.lay, pedidos, "icon, outline", 0.96, 0.734)
-        		this.listPedidos.label = "Pedidos pendientes"*/
+        		this.listPedidos = ui.addList(this.lay, pedidos, "icon, outline", 0.96, 0.713)
+        		this.listPedidos.label = "Pedidos pendientes"
             
             //Add icon
             //this.txtIcon = ui.addText( this.lay, "home", "Primary,Icon")

@@ -16,12 +16,15 @@ class Main extends App
     		
         //Add main layout and set default child margins.
         this.layMain = ui.addLayout( "main", "linear", "fillxy" )
-        this.layMain.setChildMargins( .02, .0, .02, .02 )
+        this.layMain.setChildMargins( 0.02, 0.02, 0.02, 0.02 )
+        
+        this.layPage = ui.addLayout( this.layMain, "frame", "fillxy" )
         
         //Crear barra de titulo
-        this.apb = ui.addAppBar(this.layMain, "Eco POS", "static", 1)
+       this.apb = ui.addAppBar(this.layMain, "Eco POS v3", "", 1)
         this.btnDescuentos = ui.addButton(this.apb.layout, "label", "icon")
         this.btnConfig = ui.addButton(this.apb.layout, "settings", "icon")
+        
         
         //Agregar barra de navegacion
         var menuNav = [
@@ -36,13 +39,24 @@ class Main extends App
         this.navBar.setOnTouch(this.onMenu)
         
         this.home = new Home( this )
-        this.layPage = ui.addLayout( this.layMain, "frame", "", 1, 1 )
         this.home.show()
-        
     }
     
     onMenu( title, index )
     {
-        ui.showPopup(index)
+        //ui.showPopup(index)
+        this.showPage(index)
+    }
+    
+    showPage( index )
+    {
+        //Ocultar todas las paginas
+        this.home.hide()
+
+        //Mostrar pagina de acuerdo al indice
+        switch( index ) {
+            case 0: this.home.show(); break
+            //case "Settings": this.settings.show(); break
+        }
     }
 }
