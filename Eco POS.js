@@ -3,6 +3,7 @@
 cfg.Portrait
 
 include("Home.js")
+include("Customers.js")
 
 //Main class for the app
 class Main extends App
@@ -10,7 +11,7 @@ class Main extends App
     //Called when app starts.
     onStart()
     {
-    		//Establecer tema en pruebas modo oscuro
+    		//Establecer tema en modo oscuro
     		ui.setTheme("dark")
     		ui.setThemeColor("#673ab7", "#81d4fa")
     		
@@ -39,6 +40,8 @@ class Main extends App
         this.navBar.setOnTouch(this.onMenu)
         
         this.home = new Home( this )
+        this.customers = new Customers( this )
+        
         this.home.show()
     }
     
@@ -52,11 +55,12 @@ class Main extends App
     {
         //Ocultar todas las paginas
         this.home.hide()
+        this.customers.hide()
 
         //Mostrar pagina de acuerdo al indice
         switch( index ) {
             case 0: this.home.show(); break
-            //case "Settings": this.settings.show(); break
+            case 4: this.customers.show(); break
         }
     }
 }

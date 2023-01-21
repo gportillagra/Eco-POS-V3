@@ -44,17 +44,8 @@ class Home extends AppObject
         		var pedidos = [
         			["event", "Misc Hernandez (La Estanzuela)", "Fecha de entrega: 15/01/2023"]
         		]
-        		this.listPedidos = ui.addList(this.lay, pedidos, "icon, outline", 0.96, 0.713)
-        		this.listPedidos.label = "Pedidos pendientes"
-            
-            //Add icon
-            //this.txtIcon = ui.addText( this.lay, "home", "Primary,Icon")
-            //this.txtIcon.setScale( 4,4 )
-
-            //Add some text.
-            //var s = "This is your <strong>home page</strong>."
-            //this.txtHome = ui.addText( this.lay, s, "Multiline,Html" )
-            //this.txtHome.textSize = "1.2em"
+        		this.listPedidos = ui.addList(this.lay, pedidos, "icon", 0.96, 0.713)
+        		//this.listPedidos.label = "Pedidos pendientes"
         }
 
         //Show the page.
